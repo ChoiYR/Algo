@@ -99,12 +99,12 @@ int MoveTo(MazeInfo* Maze, Position* Current, int Direction)
 
 
 //Next	Step: by direction, position set 
-//		return:  
+//		return:  if wall, mark, index over-FAIL not SUCCEED
 int GetNextStep(MazeInfo* Maze, Position* Current, int Direction, Position* Next)
 {
 	switch(Direction)
 	{
-		case NORTH:
+		case NORTH: 
 			Next->X = Current->X;
 			Next->Y = Current->Y - 1;
 
@@ -117,6 +117,7 @@ int GetNextStep(MazeInfo* Maze, Position* Current, int Direction, Position* Next
 
 			if(Next->Y == Maze->RowSize)
 				return FAIL;
+
 			break;
 		case WEST:
 			Next->X = Current->X-1;
