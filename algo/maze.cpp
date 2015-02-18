@@ -108,7 +108,6 @@ int GetNextStep(MazeInfo* Maze, Position* Current, int Direction, Position* Next
 			Next->X = Current->X;
 			Next->Y = Current->Y - 1;
 
-
 			if(Next->Y == -1)
 				return FAIL;
 			break;
